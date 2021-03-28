@@ -98,4 +98,6 @@ systemctl restart icecast2
 if [[ ! -d "${STREAMS_DIR}" ]]; then
     mkdir -p "${STREAMS_DIR}"
 fi
-cp "${SCRIPT_PATH}/streams/*" "${STREAMS_DIR}/"
+cp "${SCRIPT_PATH}"/streams/scrape.py "${STREAMS_DIR}/"
+cp "${SCRIPT_PATH}"/streams/stream.sh "${STREAMS_DIR}/"
+cp "${SCRIPT_PATH}"/streams/add_stream /usr/local/bin/

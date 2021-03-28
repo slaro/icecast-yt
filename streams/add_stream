@@ -3,6 +3,22 @@
 URL="${1}"
 MOUNT="${2}"
 
+echo "[Unit]
+Description=${MOUNT} daemon
+After=network.target
+After=icecast2.service
+
+[Service]
+Type=simple
+ExecStart=/opt/streams/stream.sh ${URL} ${MOUNT}
+Restart=always
+
+[Install]
+WantedBy=multi-user.target" > "/etc/systemd/system/${MOUNT/\//_}.service"
+
+systemctl enable "${MOUNT/\//_}"
+systemctl start "${MOUNT/\//_}"
+
 UPLOADER=$(youtube-dl -s -j 'https://www.youtube.com/watch?v=5qap5aO4i9A' | jq -r '.uploader')
 if [[ "${UPLOADER^^}" != "LOFI GIRL" ]]; then
     exit 0
@@ -12,6 +28,7 @@ echo "[Unit]
 Description=${MOUNT}-scrape daemon
 After=network.target
 After=icecast2.service
+After=${MOUNT/\//_}.service
 
 [Service]
 Type=simple
