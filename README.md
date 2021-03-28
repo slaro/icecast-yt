@@ -1,4 +1,4 @@
-# Icecast Lofi Stream
+# Icecast + youtube-dl Stream
 
 ## Install
 
