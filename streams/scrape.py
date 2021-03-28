@@ -85,4 +85,4 @@ if __name__ == '__main__':
             # send new title to icecast admin metadata endpoint
             requests.get(f"http://admin:{m['admin_password']}@localhost:{m['ice_port']}/admin/metadata?mount=/{args.mount_point}&mode=updinfo&song={extracted_text}")
             print(f"Updated song title to '{extracted_text}'")
-        sleep(1)
+        sleep(10)
