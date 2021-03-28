@@ -5,10 +5,10 @@
 ```bash
 git clone https://github.com/slaro/icecast-yt.git
 cd icecast-yt
-./setup.sh
+sudo ./setup.sh
 
-add_stream 'https://www.youtube.com/watch?v=5qap5aO4i9A' 'lofi/study'
-add_stream 'https://www.youtube.com/watch?v=DWcJFNfaw9c' 'lofi/chill'
+sudo add_stream 'https://www.youtube.com/watch?v=5qap5aO4i9A' 'lofi/study'
+sudo add_stream 'https://www.youtube.com/watch?v=DWcJFNfaw9c' 'lofi/chill'
 ```
 
 ## Resources
